@@ -27,10 +27,9 @@ rm -rf dist
 if [ "$#" -ne 1 ]
 then
     python setup.py bdist_rpm
-    python setup_client.py bdist_rpm
 else
     python setup.py bdist_rpm --final
-    python setup_client.py bdist_rpm --final
+
 fi
 
 rm -rf dist/*.src*

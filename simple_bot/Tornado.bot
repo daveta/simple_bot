@@ -1,0 +1,15 @@
+{
+    "name": "Tornado",
+    "description": "",
+    "secretKey": "",
+    "services": [
+        {
+            "appId": "",
+            "appPassword": "",
+            "endpoint": "http://localhost:8080",
+            "id": "4af8b710-4a6b-11e8-921c-c9f948cc922b",
+            "name": "http://localhost:8080",
+            "type": "endpoint"
+        }
+    ]
+}

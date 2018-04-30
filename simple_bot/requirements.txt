@@ -1,0 +1,2 @@
+botframework-connector>=4.0.0.a2
+tornado==3.2.1

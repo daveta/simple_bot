@@ -1,0 +1,7 @@
+__title__ = 'simple_bot'
+__version__ = '0.1'
+__uri__ = 'https://www.github.com/'
+__author__ = 'Microsoft'
+__description__ = 'Tornado Docker Sample'
+__summary__ = 'Tornado Docker Sample.'
+__license__ = 'MIT'
