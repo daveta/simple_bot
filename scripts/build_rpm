@@ -1,0 +1,42 @@
+#!/bin/bash
+
+cd ../
+rm -rf **.pyc
+rm -rf **.pyo
+python -m compileall .
+if [ "$?" != "0" ]; then
+    echo "[Error] build failed!" 1>&2
+    exit 1
+fi
+python -O -m compileall .
+if [ "$?" != "0" ]; then
+    echo "[Error] build failed!" 1>&2
+    exit 1
+fi
+if [ -d "tests" ]; then
+    pytest
+    if [ "$?" != "0" ]; then
+        echo "[Error] tests failed!" 1>&2
+        exit 1
+    fi
+fi
+rm -rf build
+rm -rf MANIFEST
+rm -rf dist
+
+if [ "$#" -ne 1 ]
+then
+    python setup.py bdist_rpm
+    python setup_client.py bdist_rpm
+else
+    python setup.py bdist_rpm --final
+    python setup_client.py bdist_rpm --final
+fi
+
+rm -rf dist/*.src*
+rm -rf dist/*.tar.*
+
+
+rm -rf build
+rm -rf MANIFEST
+rm -rf dist
