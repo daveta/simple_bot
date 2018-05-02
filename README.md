@@ -1,7 +1,7 @@
 # simple_bot
 
 ************
-Introduction
+## Introduction
 ************
 simple_bot is a Tornado-based Microsoft bot-framework sample in Docker.
 - Tornado-based service which responds to Bot Framework requests
@@ -17,7 +17,7 @@ Note: The bot framework currently supports only Python 3.6+.  Most likely this
 
 
 **********************************************
-# Setup Python & Sample (Fedora/Redhat/CentOS)
+## Setup Python & Sample (Fedora/Redhat/CentOS)
 **********************************************
 ```sudo yum -y install https://centos7.iuscommunity.org/ius-release.rpm 
 sudo yum clean all
@@ -31,12 +31,12 @@ sudo pip3.6 install botframework-connector;
 
 sudo systemctl start docker
 ```
-# Install Sample
+### Install Sample
 ```cd ~
 git clone https://github.com/daveta/simple_bot.git
 ```
 
-# Build sample
+### Build sample
 
 ```cd ~/simple_bot/docker/baseimage
 sudo docker build --rm -t local/cent7-latest .
@@ -44,16 +44,16 @@ cd ~/simple_bot
 sudo docker build --rm -t local/simple_bot -f docker/botimage/Dockerfile .
 ```
 
-# Run bot
+### Run bot
 ```sudo docker run -d local/simple_bot```
 
 
-## Example: See container running.  Note: Port 8080 exposed
+#### Example: See container running.  Note: Port 8080 exposed
 ```$ docker ps
 CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS               NAMES
 4c73cde9a306        local/simple_bot    "python3.6 /simple..."   2 minutes ago       Up 2 minutes        8080/tcp            quirky_raman
 ```
-## Example: Get ip address
+#### Example: Get ip address
 
 ```$ docker inspect 
  docker inspect 4c73cde9a306
@@ -63,7 +63,7 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
             "IPAddress": "172.17.0.2",
 
 
-## Example: Test Tornado connection
+#### Example: Test Tornado connection
 ```
 
 ```$ wget 172.17.0.2:8080
