@@ -11,7 +11,7 @@ RUN yum -y install python36u; yum -y install python36u-pip
 RUN pip3.6 install --upgrade pip; pip3.6 install botframework-connector; 
 
 # Copy sample application
-ADD python/simple_bot/simple_bot /simple_bot
+ADD ./simple_bot /simple_bot
 
 # Get pip to download and install requirements:
 RUN pip3.6 install -r /simple_bot/requirements.txt
